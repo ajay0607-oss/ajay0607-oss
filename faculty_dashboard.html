@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Faculty Dashboard</h1>
+    </header>
+    <div class="content">
+        <h2>Welcome, {{ name }}!</h2>
+        <nav>
+            <a href="{{ url_for('announce') }}">Create Announcement</a> |
+           <a href="{{ url_for('approve_users') }}">Approve Students</a> |
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+        <section class="announcements">
+            <h2>Recent Announcements</h2>
+            {% if announcements %}
+                <ul>
+                    {% for announcement in announcements %}
+                        <li>
+                            <strong>{{ announcement.created_at.strftime('%Y-%m-%d %H:%M') }}:</strong> 
+                            {{ announcement.title }} - {{ announcement.message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No announcements yet.</p>
+            {% endif %}
+        </section>
+    </div>
+</body>
+</html>

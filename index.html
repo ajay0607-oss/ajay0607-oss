@@ -1,0 +1,16 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>Welcome to Student Management System</header>
+    <div class="dashboard">
+        <a href="{{ url_for('login') }}">Login</a> | 
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+</body>
+</html>

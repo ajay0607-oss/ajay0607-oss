@@ -1,0 +1,17 @@
+<!-- templates/announce.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Announcement</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>Create Announcement</header>
+    <form method="POST">
+        <input type="text" name="title" placeholder="Title" required>
+        <textarea name="message" placeholder="Content" required></textarea>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

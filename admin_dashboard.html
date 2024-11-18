@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <div class="content">
+        <h2>Welcome, Admin {{ name }}!</h2>
+        <nav>
+            <a href="{{ url_for('approve_users') }}">Approve New Users</a> |
+            <a href="{{ url_for('announce') }}">Create Announcement</a> |
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </div>
+</body>
+</html>

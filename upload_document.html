@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Documents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Upload Documents</h1>
+    </header>
+    <div class="content">
+        <form method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="marksheet">Upload Marksheet:</label>
+                <input type="file" id="marksheet" name="marksheet" required>
+            </div>
+            <div>
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" name="photo" required>
+            </div>
+            <div>
+                <label for="id_card">Upload ID Card:</label>
+                <input type="file" id="id_card" name="id_card" required>
+            </div>
+            <button type="submit">Upload</button>
+        </form>
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+</html>

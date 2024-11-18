@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Announcements</h1>
+    </header>
+    <section>
+        {% if announcements %}
+            <ul>
+                {% for announcement in announcements %}
+                    <li>
+                        <strong>{{ announcement.created_at.strftime('%Y-%m-%d %H:%M') }}:</strong> 
+                        {{ announcement.message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No announcements yet.</p>
+        {% endif %}
+    </section>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>
